@@ -68,7 +68,7 @@ def main():
         result = analyze_image(picture)
         
         # 분석 결과 표시
-        st.write("### 이미지 분석 결과")
+        st.write("### 과일 분석 결과")
         st.write(result)
         
 if __name__ == "__main__":
