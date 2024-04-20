@@ -80,10 +80,10 @@ def main():
         file_path = "fruit_data.json"
         
         # JSON 파일 로드
-        data = load_data(file_path)
+        fruit_data = load_data(file_path)
     
         # 데이터 출력
-        #st.write("Loaded Data:", data)
+        #st.write("Loaded Data:", fruit_data)
 
         if result == "none" or result == "없음":
             st.write("과일을 인식할 수 없습니다. 다시 시도해주시겠어요?")
@@ -97,10 +97,19 @@ def main():
                 parts = line.split('=')
                 if len(parts) == 2:
                     name = parts[0].strip()
-                    GI_number = parts[1].strip()
-                    st.write("Korean Fruit Name:", name)
-                    st.write("GI Number:", GI_number)
-
-        
+                    number_gpt = parts[1].strip()
+                    number_json = 0
+                    #st.write("Korean Fruit Name:", name)
+                    #st.write("GI Number:", GI_number)
+                    # 만약 해당 과일 이름이 JSON 데이터에 있다면 해당 GI 값을 반환
+                    if name in fruit_data["fruit_gi"]:
+                        number_data = fruit_data["fruit_gi"][name]
+                    
+                    st.write("과일 이름 :", name)
+                    if number_json != 0:
+                        st.write("GI (JSON) :", number_json)
+                    else:
+                        st.write("GI (GPT) :", number_gpt)
+                        
 if __name__ == "__main__":
     main()
