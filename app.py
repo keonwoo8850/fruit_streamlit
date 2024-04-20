@@ -83,7 +83,7 @@ def main():
         data = load_data(file_path)
     
         # 데이터 출력
-        st.write("Loaded Data:", data)
+        #st.write("Loaded Data:", data)
 
         if result == "none" or result == "없음":
             st.write("과일을 인식할 수 없습니다. 다시 시도해주시겠어요?")
@@ -91,15 +91,15 @@ def main():
             # 분석 결과 표시
             st.write("### 과일 분석 결과")
 
-            # '=' 기준으로 문자열을 두 부분으로 분리
-            name, GI_number = result.split('=')  
-            
-            # 양쪽 공백 제거
-            name = name.strip()
-            GI_number = GI_number.strip()
-            st.write(result)            
-            st.write("Korean Fruit Name:", name)
-            st.write("GI Number:", GI_number)
+            # 각 줄을 분할하여 처리
+            for line in text.split('\n'):
+                # '=' 기준으로 문자열을 두 부분으로 분리
+                parts = line.split('=')
+                if len(parts) == 2:
+                    name = parts[0].strip()
+                    GI_number = parts[1].strip()
+                    st.write("Korean Fruit Name:", name)
+                    st.write("GI Number:", GI_number)
 
         
 if __name__ == "__main__":
