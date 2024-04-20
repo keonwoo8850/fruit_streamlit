@@ -92,7 +92,7 @@ def main():
             st.write("### 과일 분석 결과")
 
             # 각 줄을 분할하여 처리
-            for line in text.split('\n'):
+            for line in result.split('\n'):
                 # '=' 기준으로 문자열을 두 부분으로 분리
                 parts = line.split('=')
                 if len(parts) == 2:
