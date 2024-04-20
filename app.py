@@ -83,7 +83,7 @@ def main():
         data = load_data(file_path)
     
         # 데이터 출력
-        print("Loaded Data:", data)
+        st.write("Loaded Data:", data)
         
         # 분석 결과 표시
         st.write("### 과일 분석 결과")
