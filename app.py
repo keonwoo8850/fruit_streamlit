@@ -64,8 +64,11 @@ def main():
 
     if picture is not None:
         st.image(picture)
-        # 분석 중 메시지 표시
-        st.write("분석중...")
+      
+        # 분석 중 메시지 생성
+        loading_text = st.empty()
+        loading_text.text("분석중...")
+        
         result = analyze_image(picture)
         
         
