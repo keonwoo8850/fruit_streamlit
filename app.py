@@ -124,11 +124,11 @@ def main():
 
                     # level에 따라서 낮음, 보통, 높음 출력
                     if level == 0:
-                        print(f"현재 {fruit_name}의 GI 지수 ({GI_number})는 낮음입니다.")
+                        print(f"현재 {name}의 GI 지수 ({GI_number})는 낮음입니다.")
                     elif level == 1:
-                        print(f"현재 {fruit_name}의 GI 지수 ({GI_number})는 보통입니다.")
+                        print(f"현재 {name}의 GI 지수 ({GI_number})는 보통입니다.")
                     else:
-                        print(f"현재 {fruit_name}의 GI 지수 ({GI_number})는 높음입니다.")
+                        print(f"현재 {name}의 GI 지수 ({GI_number})는 높음입니다.")
                         
 if __name__ == "__main__":
     main()
