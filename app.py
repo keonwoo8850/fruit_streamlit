@@ -28,7 +28,7 @@ def analyze_image(image_data):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Let me know the GI index of the fruit in the photo I just posted. The format is json format '{'name' : xxx, 'ko' : korean_name, 'gi' : GI}', and display all results vertically, please. And all words other than this answer are omitted. Please tell me in Korean. and if there's no result, just fill the name as 'none' in the json format"
+                        "text": "Let me know the GI index of the fruit in the photo I just posted. The format is 'fruit name' = GI number, and display all results vertically, please. And all words other than this answer are omitted. Please tell me in Korean. and if there's no result, just answer 'none' "
                     },
                     {
                         "type": "image_url",
