@@ -97,7 +97,7 @@ def main():
                 parts = line.split('=')
                 if len(parts) == 2:
                     name = parts[0].strip()
-                    number_gpt = parts[1].strip()
+                    number_gpt = int(parts[1].strip())
                     number_json = 0
                     GI_number = number_gpt
                     #st.write("Korean Fruit Name:", name)
