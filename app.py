@@ -110,6 +110,23 @@ def main():
                         st.write("GI (JSON) :", number_json)
                     else:
                         st.write("GI (GPT) :", number_gpt)
+
+                    # gi_level 배열에서 현재 GI 수치가 속하는 단계 확인
+                    gi_levels = fruit_data["gi_level"]
+                    level = 0  # 기본값은 낮음
+                    
+                    for idx, gi_threshold in enumerate(gi_levels):
+                        if GI_number < gi_threshold:
+                            level = idx
+                            break
+
+                    # level에 따라서 낮음, 보통, 높음 출력
+                    if level == 0:
+                        print(f"현재 {fruit_name}의 GI 지수 ({GI_number})는 낮음입니다.")
+                    elif level == 1:
+                        print(f"현재 {fruit_name}의 GI 지수 ({GI_number})는 보통입니다.")
+                    else:
+                        print(f"현재 {fruit_name}의 GI 지수 ({GI_number})는 높음입니다.")
                         
 if __name__ == "__main__":
     main()
