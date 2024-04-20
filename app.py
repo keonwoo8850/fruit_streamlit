@@ -34,7 +34,7 @@ def analyze_image(image_data):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Let me know the GI index of the fruit in the photo I just posted. The format is 'korean fruit name' = GI number, and display all results vertically, please. And all words other than this answer are omitted. And if there's no result, just answer 'none' in English"
+                        "text": "Let me know the GI index of the fruit in the photo I just posted. The format is korean_fruit_name = GI number, and display all results vertically, please. And all words other than this answer are omitted. And if there's no result, just answer 'none' in English"
                     },
                     {
                         "type": "image_url",
@@ -84,10 +84,23 @@ def main():
     
         # 데이터 출력
         st.write("Loaded Data:", data)
-        
-        # 분석 결과 표시
-        st.write("### 과일 분석 결과")
-        st.write(result)
+
+        if result == "none" or result == "없음":
+            st.write("과일을 인식할 수 없습니다. 다시 시도해주시겠어요?")
+        else:
+            # 분석 결과 표시
+            st.write("### 과일 분석 결과")
+
+            # '=' 기준으로 문자열을 두 부분으로 분리
+            name, GI_number = result.split('=')  
+            
+            # 양쪽 공백 제거
+            name = name.strip()
+            GI_number = GI_number.strip()
+            st.write(result)            
+            st.write("Korean Fruit Name:", name)
+            st.write("GI Number:", GI_number)
+
         
 if __name__ == "__main__":
     main()
