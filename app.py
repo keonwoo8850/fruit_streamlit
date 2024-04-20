@@ -65,15 +65,10 @@ def main():
     if picture is not None:
         st.image(picture)
       
-        # 분석 중 메시지 생성
-        loading_text = st.empty()
-        loading_text.text("분석중...")
-        
-        result = analyze_image(picture)
-        
-        
-        # 분석 완료 후 메시지 삭제
-        loading_text.empty()
+        # Show loading spinner while analyzing image
+        with st.spinner('분석 중입니다...'):
+            # Analyze image
+            result = analyze_image(picture)
         
         # 분석 결과 표시
         st.write("### 과일 분석 결과")
