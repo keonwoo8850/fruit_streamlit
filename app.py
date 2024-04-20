@@ -73,7 +73,6 @@ def main():
         # 분석 결과 표시
         st.write("### 과일 분석 결과")
         st.write(result)
-        st.json(result)
         
 if __name__ == "__main__":
     main()
