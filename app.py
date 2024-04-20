@@ -99,6 +99,7 @@ def main():
                     name = parts[0].strip()
                     number_gpt = parts[1].strip()
                     number_json = 0
+                    GI_number = number_gpt
                     #st.write("Korean Fruit Name:", name)
                     #st.write("GI Number:", GI_number)
                     # 만약 해당 과일 이름이 JSON 데이터에 있다면 해당 GI 값을 반환
@@ -108,6 +109,7 @@ def main():
                     st.write("과일 이름 :", name)
                     if number_json != 0:
                         st.write("GI (JSON) :", number_json)
+                        GI_number = number_json
                     else:
                         st.write("GI (GPT) :", number_gpt)
 
