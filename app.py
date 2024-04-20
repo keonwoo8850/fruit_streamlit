@@ -69,7 +69,8 @@ def main():
         result = analyze_image(picture)
         
         
-        
+        # 분석 완료 후 메시지 삭제
+        loading_text.empty()
         
         # 분석 결과 표시
         st.write("### 과일 분석 결과")
