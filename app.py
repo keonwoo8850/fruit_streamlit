@@ -1,6 +1,7 @@
 import base64
 import requests
 import streamlit as st
+import json
 
 # OpenAI API Key
 api_key = st.secrets["api_key"] # 4월 5일 김채원 수정
@@ -12,6 +13,11 @@ st.title("ChatGPT 과일 당뇨 지수 체커")
 def encode_image(image):
     return base64.b64encode(image).decode('utf-8')
 
+def load_data(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
+    
 def analyze_image(image_data):
     base64_image = encode_image(image_data)
     
@@ -69,6 +75,15 @@ def main():
         with st.spinner('분석 중입니다...'):
             # Analyze image
             result = analyze_image(picture)
+
+        # JSON 파일 경로
+        file_path = "fruit_data.json"
+        
+        # JSON 파일 로드
+        data = load_data(file_path)
+    
+        # 데이터 출력
+        print("Loaded Data:", data)
         
         # 분석 결과 표시
         st.write("### 과일 분석 결과")
