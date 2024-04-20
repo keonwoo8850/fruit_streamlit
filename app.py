@@ -104,6 +104,8 @@ def main():
                     # 만약 해당 과일 이름이 JSON 데이터에 있다면 해당 GI 값을 반환
                     if name in fruit_data["fruit_gi"]:
                         number_data = fruit_data["fruit_gi"][name]
+                    else:
+                        st.write(fruit_data["fruit_gi"]) 
                     
                     st.write("과일 이름 :", name)
                     if number_json != 0:
