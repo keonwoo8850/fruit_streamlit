@@ -64,11 +64,12 @@ def main():
 
     if picture is not None:
         st.image(picture)
-        
-        result = analyze_image(picture)
-        
         # 분석 중 메시지 표시
         st.write("분석중...")
+        result = analyze_image(picture)
+        
+        
+        
         
         # 분석 결과 표시
         st.write("### 과일 분석 결과")
