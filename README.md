@@ -1,7 +1,7 @@
 # fruit_streamlit
 ### LG AI Camp 화이팅!
 https://fruit-fruit.streamlit.app/
-###### 요거는 우리의 소중한 웹사이트
+##### 요거는 우리의 소중한 웹사이트
 
 
 # 참고
