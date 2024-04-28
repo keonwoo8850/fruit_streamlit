@@ -34,7 +34,7 @@ def analyze_image(image_data):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Let me know the GI index of the fruit in the photo I just posted. The format is korean_fruit_name = GI number, You MUST give me Korean fruit name!. and display all results vertically, please. And all words other than this answer are omitted. And if there's no result, just answer 'none' in English"
+                        "text": "Let me know the GI index of the food in the photo I just posted. The format is korean_food_name = GI number, You MUST give me Korean food name!. and display all results vertically, please. And all words other than this answer are omitted. And if there's no result, just answer 'none' in English"
                     },
                     {
                         "type": "image_url",
