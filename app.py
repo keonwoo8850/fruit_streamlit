@@ -6,7 +6,7 @@ import json
 # OpenAI API Key
 api_key = st.secrets["api_key"] # 4월 5일 김채원 수정
 
-st.title("ChatGPT 과일 당뇨 지수 계산기")
+st.title("ChatGPT 음식 당뇨 지수 계산기")
 
 # generated from Chat GPT
 # Function to encode the image
