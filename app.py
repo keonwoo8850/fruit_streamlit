@@ -6,7 +6,7 @@ import json
 # OpenAI API Key
 api_key = st.secrets["api_key"] # 4월 5일 김채원 수정
 
-st.title("ChatGPT 음식 당뇨 지수 계산기")
+st.title("ChatGPT 과일 당뇨 지수 계산기")
 
 # generated from Chat GPT
 # Function to encode the image
@@ -34,7 +34,7 @@ def analyze_image(image_data):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Let me know the GI index of the food in the photo I just posted. The format is korean_food_name = GI number, You MUST give me Korean food name!. and display all results vertically, please. And all words other than this answer are omitted. And if there's no result, just answer 'none' in English"
+                        "text": "Let me know the GI index of the food in the photo I just posted. The format is korean_fruit_name = GI number, You MUST give me Korean fruit name! and display all results vertically, please. And all words other than this answer are omitted. And if there's no result, just answer 'none' in English"
                     },
                     {
                         "type": "image_url",
