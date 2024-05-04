@@ -87,13 +87,15 @@ def main():
         # 데이터 출력
         #st.write("Loaded Data:", fruit_data)
 
+        resultOk = True
         if result == "none" or result == "없음":
-            st.write("과일을 인식할 수 없습니다. 다시 시도해주시겠어요?")
+            resultOk = False
         else:
             # 분석 결과 표시
             st.write("### 과일 분석 결과")
 
             # 각 줄을 분할하여 처리
+            resultOk = False
             for line in result.split('\n'):
                 # '=' 기준으로 문자열을 두 부분으로 분리
                 parts = line.split('=')
@@ -132,14 +134,20 @@ def main():
                         level = -1
 
                     # level에 따라서 낮음, 보통, 높음 출력
-                    if level == -1:
+                    if level < 0:
+                        resultOk = False
                         st.write(f"{name}의 GI 지수 ({GI_number})가 이상합니다.")
-                    elif level == 0:
-                        st.write(f"{name}의 GI 지수 ({GI_number})는 낮음입니다.")
-                    elif level == 1:
-                        st.write(f"{name}의 GI 지수 ({GI_number})는 보통입니다.")
                     else:
-                        st.write(f"{name}의 GI 지수 ({GI_number})는 높음입니다.")
+                        resultOk = True
+                        if level == 0:
+                            st.write(f"{name}의 GI 지수 ({GI_number})는 낮음입니다.")
+                        elif level == 1:
+                            st.write(f"{name}의 GI 지수 ({GI_number})는 보통입니다.")
+                        else:
+                            st.write(f"{name}의 GI 지수 ({GI_number})는 높음입니다.")
                         
+        if resultOk == False:
+            st.write("과일을 인식할 수 없습니다. 다시 시도해주시겠어요?")
+                    
 if __name__ == "__main__":
     main()
