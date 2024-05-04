@@ -135,7 +135,6 @@ def main():
 
                     # level에 따라서 낮음, 보통, 높음 출력
                     if level < 0:
-                        resultOk = False
                         st.write(f"{name}의 GI 지수 ({GI_number})가 이상합니다.")
                     else:
                         resultOk = True
