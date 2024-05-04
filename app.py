@@ -61,7 +61,7 @@ def main():
         uploaded_file = st.camera_input("사진 촬영")
     else:
         # 앨범에서 이미지 선택
-        uploaded_file = st.file_uploader("앨범에서 이미지 선택", type=["jpg", "jpeg"])
+        uploaded_file = st.file_uploader("앨범에서 이미지 선택", type=["jpg", "jpeg", "png", "bmp"])
 
     if uploaded_file is not None:
         picture = uploaded_file.read()
