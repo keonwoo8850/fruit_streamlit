@@ -132,7 +132,7 @@ def main():
                         level = -1
 
                     # level에 따라서 낮음, 보통, 높음 출력
-                    if level = -1:
+                    if level == -1:
                         st.write(f"{name}의 GI 지수 ({GI_number})가 이상합니다.")
                     elif level == 0:
                         st.write(f"{name}의 GI 지수 ({GI_number})는 낮음입니다.")
