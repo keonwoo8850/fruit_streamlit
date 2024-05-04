@@ -139,11 +139,11 @@ def main():
                     else:
                         resultOk = True
                         if level == 0:
-                            st.write(f"{name}의 GI 지수 ({GI_number})는 낮음입니다.")
+                            st.write(f"{name}의 GI 지수 ({GI_number})는 '낮음' 입니다.")
                         elif level == 1:
-                            st.write(f"{name}의 GI 지수 ({GI_number})는 보통입니다.")
+                            st.write(f"{name}의 GI 지수 ({GI_number})는 '보통' 입니다.")
                         else:
-                            st.write(f"{name}의 GI 지수 ({GI_number})는 높음입니다.")
+                            st.write(f"{name}의 GI 지수 ({GI_number})는 '높음' 입니다.")
                         
         if resultOk == False:
             st.write("과일을 인식할 수 없습니다. 다시 시도해주시겠어요?")
