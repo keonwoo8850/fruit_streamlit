@@ -76,7 +76,7 @@ def main():
             # Analyze image
             result = analyze_image(picture)
 
-        st.write("GPT Result :", result)
+        st.write("실제 GPT result :", result)
         
         # JSON 파일 경로
         file_path = "fruit_data.json"
@@ -99,7 +99,11 @@ def main():
                 parts = line.split('=')
                 if len(parts) == 2:
                     name = parts[0].strip()
-                    number_gpt = int(parts[1].strip())
+                    if parts[1].strip().isdigit():
+                        number_gpt = int(parts[1].strip())
+                    else:
+                        number_gpt = -1
+                        
                     number_json = 0
                     GI_number = number_gpt
                     #st.write("Korean Fruit Name:", name)
@@ -118,14 +122,19 @@ def main():
                     # gi_level 배열에서 현재 GI 수치가 속하는 단계 확인
                     gi_levels = fruit_data["gi_level"]
                     level = 0  # 기본값은 낮음
-                    
-                    for idx, gi_threshold in enumerate(gi_levels):
-                        if GI_number < gi_threshold:
-                            level = idx
-                            break
+
+                    if GI_number > 0:
+                        for idx, gi_threshold in enumerate(gi_levels):
+                            if GI_number < gi_threshold:
+                                level = idx
+                                break
+                    else:
+                        level = -1
 
                     # level에 따라서 낮음, 보통, 높음 출력
-                    if level == 0:
+                    if level = -1:
+                        st.write(f"{name}의 GI 지수 ({GI_number})가 이상합니다.")
+                    elif level == 0:
                         st.write(f"{name}의 GI 지수 ({GI_number})는 낮음입니다.")
                     elif level == 1:
                         st.write(f"{name}의 GI 지수 ({GI_number})는 보통입니다.")
