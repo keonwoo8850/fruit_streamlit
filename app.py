@@ -95,7 +95,7 @@ def main():
             st.write("### 과일 분석 결과")
 
             # 각 줄을 분할하여 처리
-            resultOk = False
+            resultOk = False # 아래 최종 분석 성공할때 True로 변경함.
             for line in result.split('\n'):
                 # '=' 기준으로 문자열을 두 부분으로 분리
                 parts = line.split('=')
