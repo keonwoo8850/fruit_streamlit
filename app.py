@@ -76,6 +76,8 @@ def main():
             # Analyze image
             result = analyze_image(picture)
 
+        st.write("GPT Result :", result)
+        
         # JSON 파일 경로
         file_path = "fruit_data.json"
         
